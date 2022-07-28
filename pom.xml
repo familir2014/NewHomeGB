@@ -1,67 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
-  <artifactId>NewHome</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.2.RELEASE</version>
+    <relativePath/>
+  </parent>
 
-  <name>NewHome Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+
+
+  <groupId>ru.geekbrains</groupId>
+  <artifactId>gk-portal</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>gk-portal</name>
+  <description>GK-Portal</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
   </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  <developers>
 
-  <build>
-    <finalName>NewHome</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-</project>
+    <developer>
+      <id>Familir2014</id>
+      <name>Pavel Benderskiy</name>
+      <email>Familir2014@mail.ru</email>
+      <url>https://github.com/Familir2014</url>
+      <organization>GeekBrains</organization>
+      <organizationUrl>https://geekbrains.ru/</organizationUrl>
+      <roles>
+        <role>developer backend</role>
+        <role>server setup</role>
+      </roles>
+      <timezone>Europe/Moscow</timezone>
+      <properties>
+        <picUrl>https://geekbrains-uploads.s3.amazonaws.com/assets/000/691/561/cacb4f64448af7e8ed74eaad61c126866764b795.png</picUrl>
+      </properties>
+    </developer>
+
+    <developer>
+      <id>karelalex</id>
+      <name>Nickolay Vorotilin</name>
+      <email>vorotilin_Nic@inbox.ru</email>
+      <url>https://github.com/vorotil</url>
+      <organization>GeekBrains</organization>
+      <organizationUrl>https://geekbrains.ru/</organizationUrl>
+      <roles>
+        <role>developer frontend</role>
+      </roles>
+      <timezone>Europe/Moscow</timezone>
+      <properties>
+        <picUrl>https://geekbrains-uploads.s3.amazonaws.com/assets/000/652/130/7645b237214a58376a50443419be9ff0064a87a4.JPG</picUrl>
+      </properties>
+    </developer>
+
+    <developer>
+      <id>uatilman</id>
+      <name>Yury Tilman</name>
+      <email>uatilman@gmail.com</email>
+      <url>https://github.com/uatilman</url>
+      <organization>GeekBrains</organization>
+      <organizationUrl>https://geekbrains.ru/</organizationUrl>
+      <roles>
+        <role>developer backend</role>
+        <role>team lid</role>
+      </roles>
+      <timezone>Europe/Moscow</timezone>
+      <properties>
+        <picUrl>https://geekbrains-uploads.s3.amazonaws.com/assets/000/022/280/6c8625c20e05e5cd06046f030c055f3ad512d639.jpg</picUrl>
+      </properties>
+    </developer>
+    <developer>
+      <id>chertenokru</id>
+      <name>Vispina Ekaterina</name>
+      <email>admin@chertenok.ru</email>
+      <url>https://github.com/chertenokru</url>
+      <organization>GeekBrains</organization>
+      <organizationUrl>https://geekbrains.ru/</organizationUrl>
+      <roles>
+        <role>project architect</role>
+        <role>database architect</role>
+        <role>developer backend</role>
+      </roles>
+      <timezone>Europe/Moscow</timezone>
+      <properties>
+        <picUrl>
+          https://geekbrains-uploads.s3.amazonaws.com/assets/000/287/065/b774fff6c5c973ebf72240647507026d26678990.jpg
+        </picUrl>
+      </properties>
+    </developer>
+    <developer>
+      <id>AleksVitaliy</id>
+      <name>Vitaliy Aleksandrov</name>
+      <email>Aleksanddrov@mail.ru</email>
+      <url>https://github.com/Aleksandrofff</url>
+      <organization>GeekBrains</organization>
+      <organizationUrl>https://geekbrains.ru/</organizationUrl>
+      <roles>
+        <role>developer backend</role>
+      </roles>
+      <timezone>Europe/Ufa</timezone>
+      <properties>
+        <picUrl>
+          https://uploads.hb.cldmail.ru/avatar/920849/attachment/thumb-5e357eafc7b40055f7b968b03ad8745e.jpg
+        </picUrl>
+      </properties>
+    </developer>
