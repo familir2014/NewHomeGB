@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:fragment="header">
+
+        <script th:src="@{/js/main.js}" type="text/javascript"></script>
+        <script th:src="@{/js/regboard.js}" type="text/javascript"></script>
+        <script th:src="@{/js/opros.js}" type="text/javascript"></script>
+        <script id="flatTemplate" type="text/x-jrender">
+        <div class="gk-flat-chooser">
+           <div class="gk-select-ownership form-group row"><label class="col-form-label col-sm-5">Вид недвижимости</label>
+                    <div class="col-sm-5">
+                    <select class="custom-select" required id="ownerships{{:num}}.ownershipType.name" name = "ownerships[{{:num}}].ownershipType.uuid">
+                    </select></div>
+                </div>
+                <div class="gk-select-house form-group row">
+                    <label class="col-sm-5 col-form-label">Номер корпуса (строительный номер, где 3 - колодец)</label>
+
+                    <div class="col-sm-3">
+                        <input class="form-control"  id="ownerships{{:num}}.housingNumber" name="ownerships[{{:num}}].housingNumber" value="">
+                    </div>
+                </div>
+                <div class="div_show_flat"></div>
+                <div class="gk-reg-flat-number form-group row">
+                    <label class="col-sm-5 col-form-label">Строительный Номер Объекта (по АПП)</label>
+                    <div class="col-sm-3">
+                        <input class="form-control" required id="ownerships{{:num}}.flatNumber" name="ownerships[{{:num}}].flatNumber" value="">
+
+                    </div>
+                </div>
+                <div class="form-group row"><label class="col-sm-5 col-form-label">Площадь объекта (исключая балконы и лоджии), кв м</label>
+                    <div class="col-sm-3">
+                    <input class="form-control" id="{ownerships{:num}}.square" name="ownerships[{{:num}}].square" value="" placeholder="56,3">
+
+                    </div>
+                </div>
+                <div class="form-group row"><label class="col-sm-5 col-form-label">Ваша доля в этом объекте? (Если вы единственный владелец - 100, если вы в равных долях с женой 50 и т.д.), %</label>
+                    <div class="col-sm-3">
+                    <input class="form-control" id="{ownerships{:num}}.percentageOfOwner" name="ownerships[{{:num}}].percentageOfOwner" value="" placeholder="100">
+
+                    </div>
+                </div>
+            </div>
+
+

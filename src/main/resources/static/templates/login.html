@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:fragment="header">
+        <title th:text="#{page.siteTitle}+'.'+#{page.login.title}">Login Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </th:block>
+</head>
+<body>
+<div class="card br-pagebody" th:fragment="main">
+
+    <div th:replace="fragment/page-content::pageTitle
+    (title=#{page.login.title},description=#{page.login.title},iconClass='ion-android-contact') "/>
+
+
+    <div class=" br-pagebody padding-site">
+
+        <form class="login-form row-mgb-25" method="POST" th:action="@{/authenticateTheUser}">
+            <div class="col-xs-15">
+                <div>
+                    <div th:if="${param.error} != null">
+                        <div class="alert alert-danger col-xs-offset-1 col-xs-10"
+                             th:text="#{page.login.errorText}">
+                            ошибка
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="form-control-label" th:text="#{page.login.loginText}+':'"> Логин: <span
+                            class="tx-danger">*</span></label>
+                    <input class="form-control" id="inputLogin" name="username" th:placeholder="#{page.login.loginText}"
+                           type="text"
+                           value="">
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" th:text="#{page.login.passwordText}+':'"> Пароль: <span
+                            class="tx-danger">*</span></label>
+                    <input class="form-control" id="inputPassword" name="password" type="password" value="">
+                </div>
+                <div class="form-group">
+                    <input class="form-check-input" id="inputRemember" name="remember-me" type="checkbox">
+                    <label class="form-check-label ckbox" for="inputRemember"
+                           th:text="#{page.login.rememberMeThis}">Запомнить меня на этом устройстве</label>
+                </div>
+            </div>
+
+            <button class="btn btn-info" th:text="#{page.login.submitText}" type="submit">Войти</button>
+            <a class="btn btn-success" role="button" th:href="@{/reg}"
+               th:text="#{page.login.registerText}">Регистрация</a>
+
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+
+</body>
+</html>
